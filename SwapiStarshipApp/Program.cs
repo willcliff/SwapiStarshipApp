@@ -17,7 +17,7 @@ namespace SwapiStarshipApp
             int distance = Convert.ToInt32(input);
 
             Console.WriteLine("The following data conveys the Starships along with the required stops needed to travel {0} MGLT:", string.Format("{0:n0}", distance));
-            Console.WriteLine("'Unknown' is displayed for the Starships where the speed or the consumeables value is unknown");
+            Console.WriteLine("'Unknown' is displayed for the Starships where the speed or the consumeables value was unknown");
             Console.WriteLine();
 
             List<Starship> allStarships = new List<Starship>();
