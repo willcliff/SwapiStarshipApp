@@ -12,11 +12,11 @@ using System.Collections.Specialized;
 
 namespace SwapiStarshipApp
 {
-    class SwapiService
+    /// <summary>
+    /// Makes the requests, and retrieves the data from the Api..
+    /// </summary>
+    public class SwapiService
     {
-        /// <summary>
-        /// Makes the requests, and retrieves the data from the Api..
-        /// </summary>
         private enum HttpMethod
         {
             GET,
@@ -26,6 +26,9 @@ namespace SwapiStarshipApp
         private string apiUrl = "http://swapi.co/api";
         private const string defaultPageNumber = "1";
 
+        /// <summary>
+        /// Create SwapiService object.
+        /// </summary>
         public SwapiService()
         {
         }
@@ -132,7 +135,7 @@ namespace SwapiStarshipApp
         /// <returns>
         /// Returns the next/previous page number
         /// </returns> 
-        private EntityResults<T> GetAllPaginated<T>(string entityName, string pageNumber = defaultPageNumber) where T : BaseEntity
+        public EntityResults<T> GetAllPaginated<T>(string entityName, string pageNumber = defaultPageNumber) where T : BaseEntity
         {
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("page", pageNumber);
@@ -156,6 +159,32 @@ namespace SwapiStarshipApp
         {
             EntityResults<Starship> result = GetAllPaginated<Starship>("/starships/", pageNumber);
             return result;
+        }
+
+        /// <summary>
+        /// Retrieves the page with results <see cref="SwapiStarshipApp.Entities.EntityResults{T}" />.
+        /// </summary>
+        /// <returns>
+        /// Returns a list of all <see cref="SwapiStarshipApp.Entities.Starship" /> objects.
+        /// </returns>
+        public List<Starship> GetStarships()
+        {           
+            List<Starship> allStarships = new List<Starship>();
+            var starships = GetAllStarships();
+
+            while (allStarships.Count < starships.count)
+            {
+                foreach (Starship starship in starships.results)
+                {
+                    allStarships.Add(starship);
+                }
+                if (allStarships.Count == starships.count)
+                {
+                    break;
+                }
+                starships = GetAllStarships(starships.nextPageNo);
+            }
+            return allStarships;
         }
 
         #endregion

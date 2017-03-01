@@ -21,7 +21,8 @@ namespace SwapiStarshipApp
             Console.WriteLine();
 
             List<Starship> allStarships = new List<Starship>();
-            allStarships = GetStarships();
+            SwapiService swapiService = new SwapiService();
+            allStarships = swapiService.GetStarships();
 
             foreach (Starship starship in allStarships)
             {
@@ -38,34 +39,6 @@ namespace SwapiStarshipApp
                 }
                 Console.WriteLine("{0} : {1}", starship.name, stopsRequired);
             }
-        }
-
-        /// <summary>
-        /// Retrieves the page with results <see cref="SwapiStarshipApp.Entities.EntityResults{T}" />.
-        /// </summary>
-        /// <returns>
-        /// Returns a list of all <typeparam name="Starship"><see cref="SwapiStarshipApp.Entities.Starship" /> objects.</typeparam>
-        /// </returns>
-        private static List<Starship> GetStarships()
-        {
-            SwapiService core = new SwapiService();
-            List<Starship> allStarships = new List<Starship>();
-
-            var starships = core.GetAllStarships();
-
-            while (allStarships.Count < starships.count)
-            {
-                foreach (Starship starship in starships.results)
-                {
-                    allStarships.Add(starship);
-                }
-                if (allStarships.Count == starships.count)
-                {
-                    break;
-                }
-                starships = core.GetAllStarships(starships.nextPageNo);
-            }
-            return allStarships;
         }
     }
 }

@@ -23,6 +23,7 @@ namespace SwapiStarshipApp
     /// </summary>
     public class Calculations
     {
+        const string unknownValue = "unknown";
         /// <summary>
         /// Checks if the following variables of the <see cref="SwapiStarshipApp.Entities.Starship" /> have known values.
         /// </summary>
@@ -33,7 +34,7 @@ namespace SwapiStarshipApp
         /// </returns>
         public bool KnownConsumeablesAndSpeed(string checkConsumeableTime, string checkSpeed)
         {
-            if (checkConsumeableTime == "unknown" || checkSpeed == "unknown")
+            if (checkConsumeableTime == unknownValue || checkSpeed == unknownValue)
             {
                 return false;
             }

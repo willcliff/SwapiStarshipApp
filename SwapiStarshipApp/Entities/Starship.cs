@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace SwapiStarshipApp.Entities
 {
-    using System.Collections.Generic;
-    using Newtonsoft.Json;
-
-    /// <summary>
+  /// <summary>
     /// Class Starship. Some of properties can have unknown as a value.
     /// </summary>
     /// <seealso cref="SwapiStarshipApp.Entities.BaseEntity" />

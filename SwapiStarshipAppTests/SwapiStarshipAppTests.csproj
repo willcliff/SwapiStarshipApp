@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="CalculationsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SwapiServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SwapiStarshipApp\SwapiStarshipApp.csproj">
