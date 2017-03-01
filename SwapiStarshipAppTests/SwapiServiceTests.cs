@@ -60,7 +60,7 @@ namespace SwapiStarshipApp.Tests
         }
 
         [TestMethod()]
-        public void GetAllStarshipsTest()
+        public void GetAllStarshipsTest_ReturnsExpectedType()
         {
             string defaultPageNumber = "1";
             EntityResults<Starship> result = swapiService.GetAllPaginated<Starship>("/starships/", defaultPageNumber);
