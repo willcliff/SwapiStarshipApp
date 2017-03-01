@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwapiStarshipApp", "SwapiStarshipApp\SwapiStarshipApp.csproj", "{BE911E96-FCF8-4229-A50B-35763FE235D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwapiStarshipAppTests", "SwapiStarshipAppTests\SwapiStarshipAppTests.csproj", "{C35565DC-8C81-48F0-959A-23CB81240591}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BE911E96-FCF8-4229-A50B-35763FE235D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE911E96-FCF8-4229-A50B-35763FE235D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE911E96-FCF8-4229-A50B-35763FE235D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C35565DC-8C81-48F0-959A-23CB81240591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35565DC-8C81-48F0-959A-23CB81240591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35565DC-8C81-48F0-959A-23CB81240591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35565DC-8C81-48F0-959A-23CB81240591}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
